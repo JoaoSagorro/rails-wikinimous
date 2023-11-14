@@ -11,9 +11,14 @@ class ArticlesController < ApplicationController
 
 
   def new
+    @articles = Article.new
   end
 
   def create
+    articles = Article.new(article_permission)
+    articles.save
+    
+    redirect_to artitcles_path
   end
 
   def edit
