@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+puts 'Seeds are beeing planted...'
+
+10.times do
+  Article.new(title: Faker::DcComics.title, content: Faker::ChuckNorris.fact).save
+end
+
+puts 'Seeds are ready to grow'
