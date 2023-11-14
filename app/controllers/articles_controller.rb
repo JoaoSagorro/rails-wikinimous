@@ -11,14 +11,13 @@ class ArticlesController < ApplicationController
 
 
   def new
-    @articles = Article.new
+    @article = Article.new
   end
 
   def create
-    articles = Article.new(article_permission)
-    articles.save
-    
-    redirect_to artitcles_path
+    article = Article.new(article_permission)
+    article.save
+    redirect_to articles_path
   end
 
   def edit
@@ -37,6 +36,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_find
-    @articles = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 end
